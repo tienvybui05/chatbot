@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Reset and Base Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #fff 100%);
+            min-height: 100vh;
+        }
+
+        .chat-box {
+            width: 400px;
+            max-width: 95vw;
+            margin: 40px auto;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0, 134, 137, 0.18);
+            background: #fff;
+            overflow: hidden;
+            animation: fadeIn 0.7s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-box .ten {
+            background: linear-gradient(90deg, #008689 0%, #00b4b6 100%);
+            padding: 24px 18px;
+            color: white;
+            text-align: left;
+            border-bottom: 2px solid #00b4b6;
+        }
+
+        .chat-box .ten h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .chat-box .khung-chat .header {
+            background-color: #f9f9f9;
+            padding: 16px 18px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .chat-box .khung-chat .header h4 {
+            margin: 0;
+            color: #008689;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .chat-box .khung-chat .noi-dung {
+            overflow-y: auto;
+            height: 420px;
+            padding: 18px 18px 0 18px;
+            display: flex;
+            flex-direction: column;
+            scrollbar-width: thin;
+            scrollbar-color: #00b4b6 #e0f7fa;
+            background: #f7fafd;
+        }
+
+        .chat-box .khung-chat .noi-dung::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        .chat-box .khung-chat .noi-dung::-webkit-scrollbar-thumb {
+            background: #00b4b6;
+            border-radius: 6px;
+        }
+
+        .chat-box .khung-chat .noi-dung::-webkit-scrollbar-track {
+            background: #e0f7fa;
+        }
+
+        .bot-message {
+            max-width: 80%;
+            padding: 14px 18px;
+            border-radius: 16px 16px 16px 4px;
+            background: linear-gradient(90deg, #f1f1f1 60%, #e0f7fa 100%);
+            margin-bottom: 14px;
+            word-wrap: break-word;
+            align-self: flex-start;
+            box-shadow: 0 2px 8px rgba(0, 134, 137, 0.07);
+            font-size: 1rem;
+            color: #333;
+            position: relative;
+        }
+
+        .bot-message::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #00b4b6;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .user-message {
+            max-width: 80%;
+            padding: 14px 18px;
+            border-radius: 16px 16px 4px 16px;
+            background: linear-gradient(90deg, #008689 70%, #00b4b6 100%);
+            margin-bottom: 14px;
+            word-wrap: break-word;
+            align-self: flex-end;
+            box-shadow: 0 2px 8px rgba(0, 134, 137, 0.09);
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .user-message::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            border-radius: 50%;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .chat-box .khung-chat .yeu-cau {
+            background-color: #f9f9f9;
+            padding: 14px 18px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-box .khung-chat .yeu-cau .nhap-yeu-cau {
+            flex-grow: 1;
+            height: 38px;
+            padding: 0 16px;
+            border: 1.5px solid #ddd;
+            border-radius: 7px;
+            background-color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 1px 4px rgba(0, 134, 137, 0.04);
+        }
+
+        .chat-box .khung-chat .yeu-cau .nhap-yeu-cau:focus {
+            border-color: #00b4b6;
+            box-shadow: 0 2px 8px rgba(0, 134, 137, 0.10);
+        }
+
+        .chat-box .khung-chat .yeu-cau .gui-tin-nhan {
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #008689 0%, #00b4b6 100%);
+            color: #fff;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(0, 134, 137, 0.15);
+            letter-spacing: 1px;
+            outline: none;
+        }
+
+        .chat-box .khung-chat .yeu-cau .gui-tin-nhan:hover {
+            background: linear-gradient(90deg, #00b4b6 0%, #008689 100%);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0, 134, 137, 0.18);
+        }
+
+        .noi-dung {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 600px) {
+            .chat-box {
+                width: 100vw;
+                border-radius: 0;
+                margin: 0;
+            }
+
+            .chat-box .khung-chat .noi-dung {
+                height: 60vw;
+                min-height: 250px;
+                max-height: 60vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-box" id="hop-chat">
+        <div class="ten">
+            <h1>Hổ trợ trực tuyến</h1>
+        </div>
+        <div class="khung-chat">
+            <div class="header">
+                <h4>ChatUTH</h4>
+            </div>
+            <div class="noi-dung">
+                {% for x in danhSachChat %}
+                {% if x.cauhoi %}
+                <div class="user-message">
+                    {{ x.cauhoi }}
+
+                </div>
+                {% endif %}
+                {% if x.cautraloi %}
+                <div class="bot-message">
+                    {{ x.cautraloi }}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="yeu-cau">
+                <input type="text" name="yeucau" id="nhap-tin-nhan" class="nhap-yeu-cau" placeholder="Nhập tin nhắn..."
+                    autocomplete="off"> <button class="gui-tin-nhan" onclick="sendMessage()">Gửi</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openClose() {
+            const chatBox = document.getElementById("hop-chat");
+            const currentDisplay = window.getComputedStyle(chatBox).display;
+
+            if (currentDisplay === "none") {
+                chatBox.style.display = "block";
+            } else {
+                chatBox.style.display = "none";
+            }
+        }
+        function sendMessage() {
+            const userText = document.getElementById("nhap-tin-nhan").value.trim();
+            if (!userText) return;
+
+            const chatContainer = document.querySelector(".noi-dung");
+
+            // Thêm tin nhắn người dùng vào giao diện
+            const userMsg = document.createElement("div");
+            userMsg.className = "user-message";
+            userMsg.textContent = userText;
+            chatContainer.appendChild(userMsg);
+
+            // Gửi yêu cầu tới server
+            fetch(`/get?msg=${encodeURIComponent(userText)}`)
+                .then(res => res.json())
+                .then(data => {
+                    // Thêm tin nhắn bot trả lời
+                    const botMsg = document.createElement("div");
+                    botMsg.className = "bot-message";
+                    botMsg.textContent = data.response;
+                    chatContainer.appendChild(botMsg);
+
+                    // Cuộn xuống cuối khung chat
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                });
+            document.getElementById("nhap-tin-nhan").value = "";
+        }
+        // Lắng nghe sự kiện nhấn phím Enter
+        document.getElementById("nhap-tin-nhan").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của Enter
+                sendMessage(); // Gọi hàm gửi tin nhắn
+            }
+        });
+    </script>
+
+</body>
+
+</html>

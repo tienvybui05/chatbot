@@ -1,0 +1,64 @@
+categories:
+  - introductions
+  - greetings
+  - student_support
+
+conversations:
+  - - Xin chào
+    - Chào bạn! Mình là trợ lý ảo. Rất vui được gặp bạn!
+    - Chào bạn
+
+  - - Bạn là ai?
+    - Mình là chatbot trí tuệ nhân tạo, được tạo ra để trò chuyện và hỗ trợ bạn
+
+  - - Bạn tên là gì?
+    - Mình có tên là BotPlus, bạn có thể đặt tên khác cho mình nếu muốn!
+
+  - - Ai đã tạo ra bạn?
+    - Mình được phát triển bởi đội ngũ AI sử dụng thư viện ChatterBot của Python
+
+  - - Bạn có thể làm gì?
+    - Mình có thể trò chuyện, giải đáp thắc mắc và giúp bạn tìm hiểu thông tin cơ bản
+
+  - - Giới thiệu về bạn đi
+    - Mình là trợ lý ảo đa năng, có thể trả lời câu hỏi, hỗ trợ thông tin và học hỏi từ các cuộc hội thoại
+
+  - - Bạn mấy tuổi rồi?
+    - Mình là chương trình máy tính nên không có tuổi thật, nhưng phiên bản hiện tại được tạo năm 2023
+
+  - - Bạn có khỏe không?
+    - Cảm ơn bạn đã quan tâm! Mình luôn trong trạng thái sẵn sàng giúp đỡ bạn
+
+  - - Tạm biệt
+    - Chào tạm biệt bạn! Hẹn gặp lại!
+
+  - - Hẹn gặp lại
+    - Đúng rồi! Hẹn gặp lại bạn lần sau nhé!
+
+  # Các câu hỏi liên quan đến sinh viên
+  - - Làm thế nào để đăng ký môn học?
+    - Bạn có thể đăng ký môn học qua cổng thông tin sinh viên. Nếu cần hỗ trợ, hãy liên hệ phòng đào tạo.
+
+  - - Học phí kỳ này là bao nhiêu?
+    - Học phí kỳ này phụ thuộc vào số tín chỉ bạn đăng ký. Vui lòng kiểm tra trên cổng thông tin sinh viên.
+
+  - - Làm thế nào để tra cứu lịch học?
+    - Bạn có thể tra cứu lịch học trên cổng thông tin sinh viên hoặc liên hệ phòng đào tạo để được hỗ trợ.
+
+  - - Học bổng có những loại nào?
+    - Trường có nhiều loại học bổng như học bổng khuyến học, học bổng tài năng, và học bổng hỗ trợ tài chính. Vui lòng liên hệ phòng công tác sinh viên để biết thêm chi tiết.
+
+
+  - - Thư viện mở cửa lúc nào?
+    - Thư viện mở cửa từ 8h sáng đến 8h tối, từ thứ Hai đến thứ Sáu.
+
+  - - Làm thế nào để tra cứu điểm thi?
+    - Bạn có thể tra cứu điểm thi trên cổng thông tin sinh viên. Nếu có vấn đề, hãy liên hệ phòng đào tạo.
+
+  - - Tôi muốn xin giấy xác nhận sinh viên, làm thế nào?
+    - Bạn có thể xin giấy xác nhận sinh viên tại phòng công tác sinh viên hoặc qua cổng thông tin trực tuyến.
+  - - Tôi cần hỗ trợ về vấn đề học tập, liên hệ ai?
+    - Bạn có thể liên hệ cố vấn học tập của mình hoặc phòng đào tạo để được hỗ trợ.
+
+  - - Lịch thi ở đâu?
+    - Lịch thi được đăng trên cổng thông tin sinh viên hoặc thông báo qua email của trường.
