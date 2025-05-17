@@ -15,10 +15,9 @@
         }
 
         .chat-box {
-            width: 400px;
-            max-width: 95vw;
-            margin: 40px auto;
-            border-radius: 18px;
+            width: 100%;
+            margin: 0;
+            /* border-radius: 18px; */
             box-shadow: 0 8px 32px rgba(0, 134, 137, 0.18);
             background: #fff;
             overflow: hidden;
@@ -68,7 +67,7 @@
 
         .chat-box .khung-chat .noi-dung {
             overflow-y: auto;
-            height: 420px;
+            height: 500px;
             padding: 18px 18px 0 18px;
             display: flex;
             flex-direction: column;
@@ -92,9 +91,9 @@
 
         .bot-message {
             max-width: 80%;
-            padding: 14px 18px;
-            border-radius: 16px 16px 16px 4px;
-            background: linear-gradient(90deg, #f1f1f1 60%, #e0f7fa 100%);
+            padding: 15px 18px;
+            border-radius: 10px 10px 10px 4px;
+            background: linear-gradient(90deg, #efeeee 60%, #d4f4f9 100%);
             margin-bottom: 14px;
             word-wrap: break-word;
             align-self: flex-start;
@@ -117,8 +116,8 @@
 
         .user-message {
             max-width: 80%;
-            padding: 14px 18px;
-            border-radius: 16px 16px 4px 16px;
+            padding: 15px 18px;
+            border-radius: 10px 10px 4px 10px;
             background: linear-gradient(90deg, #008689 70%, #00b4b6 100%);
             margin-bottom: 14px;
             word-wrap: break-word;
@@ -169,7 +168,7 @@
         }
 
         .chat-box .khung-chat .yeu-cau .gui-tin-nhan {
-            padding: 12px 32px;
+            padding: 12px 15px;
             background: linear-gradient(90deg, #008689 0%, #00b4b6 100%);
             color: #fff;
             border-radius: 8px;
@@ -212,11 +211,11 @@
 <body>
     <div class="chat-box" id="hop-chat">
         <div class="ten">
-            <h1>Hổ trợ trực tuyến</h1>
+            <h1>Hỗ trợ trực tuyến</h1>
         </div>
         <div class="khung-chat">
             <div class="header">
-                <h4>ChatUTH</h4>
+                <h4>ChatboxUTH</h4>
             </div>
             <div class="noi-dung">
                 {% for x in danhSachChat %}

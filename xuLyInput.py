@@ -12,6 +12,7 @@ chatbot = ChatBot(
             'default_response': 'Xin lỗi, tôi không hiểu.'
         }
     ]
+    ,read_only = True
 )
 list_trainer = ListTrainer(chatbot)
 
