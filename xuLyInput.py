@@ -9,17 +9,17 @@ chatbot = ChatBot(
     logic_adapters=[
         {
             'import_path': 'chatterbot.logic.BestMatch',
-            'default_response': 'Xin lỗi, tôi không hiểu.'
+            'default_response': 'Xin lỗi, tôi không hiểu.',
+            'maximum_similarity_threshold': 0.7,
         }
     ]
     ,read_only = True
 )
 list_trainer = ListTrainer(chatbot)
-
 def getCauTraLoi(cauHoi):
     try:
         cauTraLoi = chatbot.get_response(cauHoi)
-        if cauTraLoi.confidence < 0.6:
+        if cauTraLoi.confidence < 0.7:
             luu_cau_hoi_khong_tra_loi(cauHoi)
             return "Tôi không chắc về câu trả lời."
         return str(cauTraLoi)

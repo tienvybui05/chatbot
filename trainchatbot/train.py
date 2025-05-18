@@ -14,7 +14,9 @@ chatbot = ChatBot(
 
 
 trainer = ChatterBotCorpusTrainer(chatbot)
-trainer.train("vietnamese/gioithieu.yml")
+trainer.train("vietnamese/gioithieu.yml",
+              "vietnamese/gioithieutruong.yml",
+              "vietnamese/nganhdaotao.yml")
 list_trainer = ListTrainer(chatbot)
 trainer = ListTrainer(chatbot)
 print("Train thành công! Bắt đầu trò chuyện...")
